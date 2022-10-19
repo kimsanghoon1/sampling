@@ -1,0 +1,16 @@
+/workspace/wallet2/point/src/main/java/wallet/dto/event/PointsDeducted.java
+/workspace/wallet2/point/src/main/java/wallet/dto/event/CouponPurchased.java
+/workspace/wallet2/point/src/main/java/wallet/config/kafka/KafkaConverter.java
+/workspace/wallet2/point/src/main/java/wallet/dto/entity/Point.java
+/workspace/wallet2/point/src/main/java/wallet/config/db/DBConfiguration.java
+/workspace/wallet2/point/src/main/java/wallet/config/kafka/KafkaConfiguration.java
+/workspace/wallet2/point/src/main/java/wallet/dto/event/AbstractEvent.java
+/workspace/wallet2/point/src/main/java/wallet/dto/event/CouponCancelled.java
+/workspace/wallet2/point/src/main/java/wallet/config/kafka/KafkaProperties.java
+/workspace/wallet2/point/src/main/java/wallet/listener/PolicyHandler.java
+/workspace/wallet2/point/src/main/java/wallet/PointApplication.java
+/workspace/wallet2/point/src/main/java/wallet/dto/event/InsufficientPointsOccurred.java
+/workspace/wallet2/point/src/main/java/wallet/mapper/PointMapper.java
+/workspace/wallet2/point/src/main/java/wallet/service/PointService.java
+/workspace/wallet2/point/src/main/java/wallet/controller/PointController.java
+/workspace/wallet2/point/src/main/java/wallet/service/impl/PointServiceImpl.java
