@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import wallet.dto.Dashboard;
+import wallet.dto.entity.Dashboard;
 import wallet.service.DashboardService;
 
 @RestController

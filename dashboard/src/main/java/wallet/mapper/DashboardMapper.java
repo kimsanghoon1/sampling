@@ -9,4 +9,6 @@ public interface DashboardMapper{
     public List<Dashboard> findList();
 
     public Dashboard findOneById(Long id);
+
+    public void save(Dashboard dashboard);
 } 

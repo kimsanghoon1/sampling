@@ -6,9 +6,11 @@ import org.springframework.stereotype.Service;
 
 import wallet.dto.entity.Dashboard;
 import wallet.mapper.DashboardMapper;
+import wallet.service.DashboardService;
 
 @Service
 public class DashboardServiceImpl implements DashboardService{
+    
     @Autowired
     DashboardMapper dashboardMapper;
     
@@ -24,6 +26,11 @@ public class DashboardServiceImpl implements DashboardService{
         Dashboard dashboard = dashboardMapper.findOneById(id);
 
         return dashboard;
+    }
+
+    @Override
+    public void save(Dashboard dashboard){
+        dashboardMapper.save(dashboard);
     }
 }
 

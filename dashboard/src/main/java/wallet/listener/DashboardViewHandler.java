@@ -5,6 +5,8 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
+import wallet.service.DashboardService;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;

@@ -11,9 +11,9 @@ spring:
   datasource:
     hikari:
       maximum-pool-size: 4
-    jdbc-url: jdbc:mariadb://localhost:3306/wallet
-    username: USERNAME
-    password: PASSWORD
+    jdbc-url: jdbc:mariadb://localhost:3306/wallet?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: rootpassword
 
   kafka:
     bootstrap:
@@ -29,7 +29,6 @@ spring:
       ack-mode: manual
 
 mybatis:
-  type-aliases-package: wallet.dto.entity
   mapper-locations: mapper/xml/*.xml
 
 logging:

@@ -3,7 +3,7 @@ package wallet.config.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.skmove.muv.evrental.dto.event.AbstractEvent;
+import wallet.dto.event.AbstractEvent;
 import org.apache.kafka.common.header.Headers;
 import org.apache.kafka.common.header.internals.RecordHeaders;
 import org.springframework.beans.factory.annotation.Autowired;

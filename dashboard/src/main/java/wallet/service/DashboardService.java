@@ -9,4 +9,6 @@ public interface DashboardService{
 
     public Dashboard getById(Long id);
 
+    public void save(Dashboard dashboard);
+
 }

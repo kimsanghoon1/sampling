@@ -29,7 +29,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 
 @Configuration
 @MapperScan(basePackages = {"wallet.mapper"})
-public class DBConfiguration {
+public class DBconfiguration {
 
 	@Bean
     @Primary

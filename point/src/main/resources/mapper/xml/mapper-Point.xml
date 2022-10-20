@@ -3,29 +3,25 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="wallet.mapper.PointMapper">
-    <select id="findList" resultType="point">
+    <select id="findList" resultType="hashmap">
         SELECT 
             id,
-
             holder,
-
             amount
         FROM point
     </select>
     
     
-    <select id="findOneById" parameterType="long" resultType="point">
+    <select id="findOneById" parameterType="long" resultType="wallet.dto.entity.Point">
         SELECT 
             id,
-
             holder,
-
             amount
         FROM point
         WHERE id = #{id}
     </select>
     
-    <insert id="save" parameterType="point" useGeneratedKeys="true" keyProperty="id">
+    <insert id="save" parameterType="wallet.dto.entity.Point" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO point (
                         holder,
                         amount
@@ -36,17 +32,15 @@
             )
     </insert>
     
-    <update id="update" parameterType="point">
-        UPDATE reservation
+    <update id="update" parameterType="wallet.dto.entity.Point">
+        UPDATE point
         SET 
-
             holder = #{ holder },
-
             amount = #{ amount }
         WHERE id = #{id}
     </update>
     
-    <delete id = "deleteById" parameterType="long">
+    <delete id="deleteById" parameterType="long">
         DELETE FROM point WHERE id = #{id}
     </delete>
 </mapper>

@@ -2,11 +2,14 @@
 package wallet.service.impl;
 
 import java.util.List;
+
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import wallet.dto.entity.Point;
+import wallet.dto.event.PointsDeducted;
 import wallet.mapper.PointMapper;
 import wallet.service.PointService;
 
@@ -31,13 +34,10 @@ public class PointServiceImpl implements PointService{
         
         // PUB/SUB
         // if trigger is set as Post~, this line should go below save method
-        // PointsDeducted pointsDeducted = new PointsDeducted();
-        // BeanUtils.copyProperties(point, pointsDeducted);
-        // pointsDeducted.publish(pointsDeducted.getId());
+        PointsDeducted pointsDeducted = new PointsDeducted();
+        BeanUtils.copyProperties(point, pointsDeducted);
+        pointsDeducted.publish(pointsDeducted.getId());
 
-        
-        
-        
         // PUB/SUB
         // if trigger is set as Post~, this line should go below save method
         // InsufficientPointsOccurred insufficientPointsOccurred = new InsufficientPointsOccurred();

@@ -43,8 +43,6 @@ public class PolicyHandler {
         // pointService.save(point);
         
         acknowledgment.acknowledge();
-        
-
     }
     @KafkaHandler
     public void wheneverCouponCancelled_CompensatePoint(@Payload CouponCancelled couponCancelled, Acknowledgment acknowledgment,

@@ -2,6 +2,11 @@ package wallet.listener;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import wallet.dto.entity.Dashboard;
+import wallet.dto.event.CouponPurchased;
+import wallet.service.DashboardService;
+
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.json.simple.parser.JSONParser;
 import org.slf4j.Logger;
@@ -12,16 +17,29 @@ import org.springframework.kafka.listener.AcknowledgingMessageListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
 import org.springframework.lang.Nullable;
+import org.springframework.messaging.handler.annotation.Header;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 import org.springframework.kafka.annotation.KafkaHandler;
-
+import org.springframework.kafka.support.KafkaHeaders;
 
 @Service
 @KafkaListener(topics = "wallet", groupId = "dashboard", containerFactory = "kafkaListenerContainerFactory",contentTypeConverter="smartMessageConverter")
 public class PolicyHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(PolicyHandler.class);
 
+    @Autowired
+    DashboardService dashboardService;
 
+    @KafkaHandler
+    public void wheneverCouponPurchased_UsePoint(@Payload CouponPurchased couponPurchased, Acknowledgment acknowledgment,
+                                            @Nullable @Header(KafkaHeaders.RECEIVED_PARTITION_ID) Integer partition,
+                                            @Nullable @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String messageKey){
+        // Sample Logic //
+        Dashboard dashboard = new Dashboard();
+        dashboardService.save(dashboard);        
+        acknowledgment.acknowledge();
+    }
 
     @KafkaHandler(isDefault = true)
     public void listenDefault(Object object, Acknowledgment acknowledgment) {

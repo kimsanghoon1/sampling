@@ -2,7 +2,7 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="wallet.mapper.DashboardMapper">
-    <select id="findList" resultType="dashboard">
+    <select id="findList" resultType="wallet.dto.entity.Dashboard">
         SELECT 
             id,
 
@@ -11,7 +11,7 @@
     </select>
     
     
-    <select id="findOneById" parameterType="long" resultType="dashboard">
+    <select id="findOneById" parameterType="long" resultType="wallet.dto.entity.Dashboard">
         SELECT 
             id,
 
@@ -20,4 +20,12 @@
         WHERE id = #{id}
     </select>
     
+    <insert>
+        INSERT INTO dashboard (
+            customerId
+        ) 
+        VALUES (
+            #{ customerId }
+        )
+    </insert>
 </mapper>

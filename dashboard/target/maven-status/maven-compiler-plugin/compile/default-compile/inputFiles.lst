@@ -1,0 +1,14 @@
+/workspace/wallet2/dashboard/src/main/java/wallet/controller/DashboardController.java
+/workspace/wallet2/dashboard/src/main/java/wallet/DashboardApplication.java
+/workspace/wallet2/dashboard/src/main/java/wallet/config/db/DBconfiguration.java
+/workspace/wallet2/dashboard/src/main/java/wallet/service/DashboardService.java
+/workspace/wallet2/dashboard/src/main/java/wallet/dto/event/AbstractEvent.java
+/workspace/wallet2/dashboard/src/main/java/wallet/config/kafka/KafkaConfiguration.java
+/workspace/wallet2/dashboard/src/main/java/wallet/listener/PolicyHandler.java
+/workspace/wallet2/dashboard/src/main/java/wallet/mapper/DashboardMapper.java
+/workspace/wallet2/dashboard/src/main/java/wallet/config/kafka/KafkaProperties.java
+/workspace/wallet2/dashboard/src/main/java/wallet/listener/DashboardViewHandler.java
+/workspace/wallet2/dashboard/src/main/java/wallet/dto/entity/Dashboard.java
+/workspace/wallet2/dashboard/src/main/java/wallet/config/kafka/KafkaConverter.java
+/workspace/wallet2/dashboard/src/main/java/wallet/dto/event/CouponPurchased.java
+/workspace/wallet2/dashboard/src/main/java/wallet/service/impl/DashboardServiceImpl.java
